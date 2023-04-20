@@ -4,11 +4,11 @@ require_once('connexionBdd.php');
 //recuperation des champs user et password
 $login=$_POST['user'] ?? null;
 $mdp= $_POST['password'] ?? null;
-//TODO controle en BDD si login et pwd ok
+// controle en BDD si login et pwd ok
 if($login !=null && $mdp!=null){
 //requete sql
 
-$query=("SELECT login  FROM utilisateur WHERE login like ':l' and pwd like ':p'");
+$query=("SELECT login  FROM utilisateur WHERE login like :l and pwd like :p ");
 $q = $pdo->prepare($query);
 
 	$q->bindValue(':l',$login);
