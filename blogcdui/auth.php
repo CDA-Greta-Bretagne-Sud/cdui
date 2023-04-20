@@ -10,10 +10,10 @@ if($login !=null && $mdp!=null){
 
 $query=("SELECT login  FROM utilisateur WHERE login like :l and pwd like :p ");
 $q = $pdo->prepare($query);
-
+//on crypte le mot de passe 
+$mdpcrypte=sha1($mdp);
 	$q->bindValue(':l',$login);
-    $q->bindValue(':p',$mdp);
-
+    $q->bindValue(':p',$mdpcrypte);
 			$q->execute();
 		$res = $q->fetch(PDO::FETCH_ASSOC);
         $q->closeCursor();

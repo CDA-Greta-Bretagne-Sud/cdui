@@ -20,7 +20,7 @@
 					<a href="index.html" class="logo">
 						<span class="symbol"><img src="images/logo.svg" alt="" width="70"/></span>
 					</a>
-					<h2 class="heading-section">Connexion</h2>
+					<h2 class="heading-section">Connexion (login: toto, pwd: titi)</h2>
 				</div>
 			</div>
 			<div class="row justify-content-center">
