@@ -2,7 +2,7 @@
 session_start();
 //inclure le fichier de configuration  pour se connecter à la bdd
 require_once('connexionBdd.php');
-require_once('util.php');
+require_once('util/util.php');
 //recuperation des champs user et password
 $login=$_POST['user'] ?? null;
 $mdp= $_POST['password'] ?? null;

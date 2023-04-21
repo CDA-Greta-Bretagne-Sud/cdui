@@ -29,3 +29,17 @@ function hashPassword( $password ) {
 function logout() {
     session_destroy();
 }
+/**
+ * fonction authentification qui vérifie si le token user_token est présent
+ *  dans la variable session
+ */
+function auth(){
+ $token=$_SESSION['user_token'] ?? null;
+ if($token!=null){
+    return "OK";
+ }
+ else {
+    return "NOK";
+ }
+    
+}
