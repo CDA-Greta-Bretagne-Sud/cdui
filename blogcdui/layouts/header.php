@@ -36,9 +36,15 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="index.php">Home</a></li>
+							<li><a href="accueil.php">Accueil</a></li>
 							<li><a href="apropos.php">A propos</a></li>
 							<li><a href="contact.php">Contact</a></li>
+							<?php
+							// si le role utiliszteur est un admin
+							//on affiche l'item gestion des articles
+							if($_SESSION['user_role']==4){?>
+							<li><a href="admin.php">Gestion des Articles</a></li>
+							<?php } ?>
 							<li class="bouton"><a href="index.php">Se Déconnecter</a></li>
 						</ul>
 					</nav>
