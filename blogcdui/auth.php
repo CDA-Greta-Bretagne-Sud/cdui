@@ -1,6 +1,8 @@
 <?php
+session_start();
 //inclure le fichier de configuration  pour se connecter à la bdd
 require_once('connexionBdd.php');
+require_once('util.php');
 //recuperation des champs user et password
 $login=$_POST['user'] ?? null;
 $mdp= $_POST['password'] ?? null;
@@ -20,12 +22,19 @@ $mdpcrypte=sha1($mdp);
         $q = NULL;
 		//si pas de login 
 		if(empty($res)){
+            //on supprime la session
+            logout();
 			// SI NOK-> on redirige vers la page index.php (page de connexion)
             header('Location: index.php');
 		}
         else {
+           
+            //generation du token
+            $token=generateToken(40);
+            $_SESSION['user_token']=$token;
+            $_SESSION['user_login']=$login;
             // si OK -> on redirige vers la page accueil.php
-            header('Location: accueil.php?login='.$login);
+            header('Location: accueil.php');
         }
 }
 ?>
