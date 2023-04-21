@@ -1,4 +1,8 @@
-<?php include_once('header.php'); ?>
+<?php 
+session_start();
+include_once('util/util.php');
+if(auth()=="OK"){
+ include_once('layouts/header.php'); ?>
 
 <?php
     $id=$_GET['id'];
@@ -70,4 +74,8 @@
 							</div>
 
 
-<?php include_once('footer.php'); ?>
+<?php include_once('layouts/footer.php'); 
+}
+else 
+header('Location: index.php');
+?>

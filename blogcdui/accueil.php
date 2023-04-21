@@ -10,7 +10,7 @@ include_once('layouts/header.php'); ?>
 							<header>
 								<h1>Modèle de Blog </h1><h2>à partir d'un template html5</h2>
 								<?php
-					echo " <p> Bonjour". $_SESSION['user_login'] ."!</p>";
+					echo " <p> Bonjour ". $_SESSION['user_login'] ."!</p>";
 					echo "<p> votre token est :".$_SESSION['user_token'] ."</p>";
 								?>
 								<p>Logoden biniou degemer mat an penn ar bed lazhañ kemmañ levrioù Pempoull lost eget, yezh ur chal c’hwec’h peogwir seizhvet tasenn kontrol gwenan Ar Vouster berrloer.

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 20 avr. 2023 à 16:27
+-- Généré le : ven. 21 avr. 2023 à 13:55
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.26
 
@@ -77,6 +77,27 @@ INSERT INTO `categories` (`id_categorie`, `libelle`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `role`
+--
+
+CREATE TABLE `role` (
+  `id` int(1) NOT NULL,
+  `libelle` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `role`
+--
+
+INSERT INTO `role` (`id`, `libelle`) VALUES
+(1, 'utilisateur'),
+(2, 'moderateur'),
+(3, 'editeur'),
+(4, 'admin');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `utilisateur`
 --
 
@@ -84,15 +105,18 @@ CREATE TABLE `utilisateur` (
   `id` int(11) NOT NULL,
   `login` varchar(30) NOT NULL,
   `pwd` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `id_role` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `utilisateur`
 --
 
-INSERT INTO `utilisateur` (`id`, `login`, `pwd`, `email`) VALUES
-(1, 'toto', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'toto@free.fr');
+INSERT INTO `utilisateur` (`id`, `login`, `pwd`, `email`, `id_role`) VALUES
+(1, 'toto', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'toto@free.fr', 4),
+(2, 'pascal', 'f7e79ca8eb0b31ee4d5d6c181416667ffee528ed', 'p@free.fr', 1),
+(3, 'jacques', '0b9c2625dc21ef05f6ad4ddf47c5f203837aa32c', 'j@free.fr', 1);
 
 --
 -- Index pour les tables déchargées
@@ -111,10 +135,17 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id_categorie`);
 
 --
+-- Index pour la table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_role` (`id_role`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -133,10 +164,16 @@ ALTER TABLE `categories`
   MODIFY `id_categorie` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT pour la table `role`
+--
+ALTER TABLE `role`
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,4 +1,9 @@
-<?php include_once('header.php'); ?>
+<?php 
+session_start();
+include_once('util/util.php');
+if(auth()=="OK"){
+
+include_once('layouts/header.php'); ?>
 
 <h2>Nous contacter</h2>
 <form action="affiche-form.php" method="post">
@@ -7,4 +12,9 @@
         <textarea name="message" placeholder="votre message"></textarea>
         <input type="submit" class="button" value="Envoyer">
     </form>
-<?php include_once('footer.php'); ?>
+<?php include_once('layouts/footer.php'); 
+
+}
+else 
+header('Location: index.php');
+?>

@@ -2,7 +2,7 @@
 session_start();
 include_once('util/util.php');
 if(auth()=="OK"){
-include_once('header.php'); ?>
+include_once('layouts/header.php'); ?>
 
 				<!-- Main -->
 					<div id="main">
@@ -17,7 +17,7 @@ include_once('header.php'); ?>
 						</div>
 					</div>
 
-<?php include_once('footer.php');
+<?php include_once('layouts/footer.php');
 }
 else 
 header('Location: index.php');
