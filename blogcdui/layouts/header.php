@@ -39,6 +39,6 @@
 							<li><a href="index.php">Home</a></li>
 							<li><a href="apropos.php">A propos</a></li>
 							<li><a href="contact.php">Contact</a></li>
-							<li class="bouton"><a href="connexion.php">Se connecter</a></li>
+							<li class="bouton"><a href="index.php">Se Déconnecter</a></li>
 						</ul>
 					</nav>

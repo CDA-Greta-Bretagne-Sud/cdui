@@ -1,4 +1,8 @@
-<?php include_once('header.php'); ?>
+<?php 
+session_start();
+include_once('util/util.php');
+if(auth()=="OK"){
+include_once('header.php'); ?>
 
 				<!-- Main -->
 					<div id="main">
@@ -13,4 +17,10 @@
 						</div>
 					</div>
 
-<?php include_once('footer.php'); ?>
+<?php include_once('footer.php');
+}
+else 
+header('Location: index.php');
+
+
+?>

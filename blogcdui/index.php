@@ -1,3 +1,9 @@
+<?php
+//demarrage de la session
+session_start();
+//on supprime le token dans le cas ou on se deconnecte
+$_SESSION['user_token']='';
+?>
 <!doctype html>
 <html lang="fr">
   <head>

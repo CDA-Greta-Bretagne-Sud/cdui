@@ -1,4 +1,4 @@
-<?php include_once('header.php'); ?>
+<?php include_once('layouts/header.php'); ?>
 
 <?php $id=$_GET['id'];
 echo $id;
