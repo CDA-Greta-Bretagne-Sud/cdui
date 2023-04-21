@@ -41,8 +41,12 @@
 	            	<div class="w-100 text-center">
 	   
 				<a href="#">Mot de passe oublié</a>
+				<br/>
+				<a href="register.php">S'enregistrer</a>
 								</div>
+							
 	            </div>
+	            
 	            <div class="form-group">
 	            	<button type="submit" class="btn btn-primary rounded submit p-3 px-5">Se connecter</button>
 	            </div>
