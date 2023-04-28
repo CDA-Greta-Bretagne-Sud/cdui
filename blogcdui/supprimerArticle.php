@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('util/util.php');
+//on controle l'authentification si admin (4) et présence du token
 if(auth()=="OK" && $_SESSION['user_role']==4){
     require_once('layouts/header.php');
 

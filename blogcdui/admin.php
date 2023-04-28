@@ -3,7 +3,7 @@ session_start();
 include_once('util/util.php');
 if(auth()=="OK"&& $_SESSION['user_role']==4){
 include_once('layouts/header.php'); 
-
+    echo "<p><a href='ajoutArticle.php'><img src='images/ajouter.png'/> Ajout d'un article</a></p>";
         //TODO  requete sql de selection d'article
         $resultat=$pdo->query("SELECT a.id,a.titre,a.contenu, a.image , a.icone,u.login,c.libelle
          FROM article a, utilisateur u, categories c WHERE a.id_categorie=c.id_categorie and a.id_user=u.id");

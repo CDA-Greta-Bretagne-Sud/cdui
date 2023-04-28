@@ -10,7 +10,7 @@ $mdp= $_POST['password'] ?? null;
 if($login !=null && $mdp!=null){
 //requete sql
 
-$query=("SELECT login,id_role,email  FROM utilisateur WHERE login like :l and pwd like :p ");
+$query=("SELECT id,login,id_role,email  FROM utilisateur WHERE login like :l and pwd like :p ");
 $q = $pdo->prepare($query);
 //on crypte le mot de passe 
 $mdpcrypte=sha1($mdp);
@@ -20,6 +20,7 @@ $mdpcrypte=sha1($mdp);
 		$res = $q->fetch(PDO::FETCH_ASSOC);
         $role=$res['id_role'];
         $email=$res['email'];
+        $ident=$res['id'];
         $q->closeCursor();
         $q = NULL;
 		//si pas de login 
@@ -35,6 +36,7 @@ $mdpcrypte=sha1($mdp);
             $token=generateToken(40);
             $_SESSION['user_token']=$token;
             $_SESSION['user_login']=$login;
+            $_SESSION['user_id']=$ident;
             $_SESSION['user_role']=$role;
             $_SESSION['user_email']=$email;
             // si OK -> on redirige vers la page accueil.php

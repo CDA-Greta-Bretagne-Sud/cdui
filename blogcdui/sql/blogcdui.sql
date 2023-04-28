@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 21 avr. 2023 à 15:58
+-- Généré le : ven. 28 avr. 2023 à 18:07
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.26
 
@@ -42,9 +42,7 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `id_categorie`, `titre`, `contenu`, `image`, `icone`, `id_user`) VALUES
-(1, 1, 'Unan', 'Logoden biniou degemer mat an penn, ar bed vantell las sioul, hed c’hreisteiz an koef.', 'pic01.jpg', 'fa-solid fa-heart', 1),
-(2, 3, 'DAOU', 'Veaj kurun Douarnenez bern Gwaien c’hoarzhin, re pobl ganeoc\'h e waz, Kermouster klevout vamm naet.', 'pic02.jpg', 'fa-regular fa-heart', 2),
-(3, 2, 'TRI', 'Logoden biniou degemer mat an penn ar bed c’hontadenn, mevel dra koll delioù c’heuz sailh.', 'pic03.jpg', 'fa-solid fa-heart', 1),
+(2, 2, 'aaaaa', 'bbbbb', 'ccccc', 'dddd', 1),
 (4, 1, 'PEVAR', 'Menez war vuzell ha drezi avat, c’horn treut laerezh tamall dindan, naetaat nerzh bez volz.', 'pic04.jpg', 'fa-regular fa-heart', 1),
 (5, 3, 'PEMP', 'Ler ret divskouarn ar tomm sav, livet pediñ wouel stagañ Mederieg, c’haol leun gwez warnout.', 'pic05.jpg', 'fa-solid fa-heart', 1),
 (6, 2, 'C\'HWEC\'H', 'Vuzell c’hoazh gouzout zoken dad an, dezhañ gouere Kembre boultrenn falc’hat, rodell c’hewz oan lun.', 'pic06.jpg', 'fa-regular fa-heart', 2),
@@ -53,7 +51,8 @@ INSERT INTO `article` (`id`, `id_categorie`, `titre`, `contenu`, `image`, `icone
 (9, 1, 'NAV', 'Niver da eviti dougen douar ler, kerkoulz gleb un gortoz loa, kaozeadenn dre lies ganin.', 'pic09.jpg', 'fa-solid fa-heart', 2),
 (10, 2, 'DEK', 'Stagañ nebeut Abbarez vamm stad Breizh, e goustad moged diskiant kregiñ, meurzh tachenn seizhvet kontrol.', 'pic10.jpg', 'fa-regular fa-heart', 1),
 (11, 3, 'UNNEK', 'Stagañ nebeut Abbarez vamm stad Breizh, e goustad moged diskiant kregiñ, meurzh tachenn seizhvet kontrol.', 'pic11.jpg', 'fa-solid fa-heart', 1),
-(12, 2, 'DAOUZEK', 'C’hof kardeur fur gouzañv delioù Mikael Sant-Gwenole Roazhon gwriat, buhez aer keit urzh aketus a.', 'pic12.jpg', 'fa-regular fa-heart', 2);
+(12, 2, 'DAOUZEK', 'C’hof kardeur fur gouzañv delioù Mikael Sant-Gwenole Roazhon gwriat, buhez aer keit urzh aketus a.', 'pic12.jpg', 'fa-regular fa-heart', 2),
+(14, 3, 'aaaa', 'eaeezazeaz', 'zaeeaezez', 'qsdqsds', 1);
 
 -- --------------------------------------------------------
 
@@ -156,7 +155,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
